@@ -5,39 +5,52 @@ import { GraduationCap, MapPin, Calendar, Code2 } from "lucide-react";
 export default function About() {
   return (
     <div className="w-full">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-foreground">Background</h2>
-        <p className="text-muted-foreground mt-4 leading-relaxed font-mono">
-          I'm a final-year Information Technology student at P.E.S's Modern College of Engineering, Pune. I enjoy building full-stack applications — from collaborative real-time tools to distributed knowledge management platforms. I care about writing clean, scalable code and diving deep into the systems I build.
-        </p>
-      </div>
+      {/* Text block */}
+      <p className="notion-text mb-1">
+        I'm a final-year Information Technology student at P.E.S's Modern College of Engineering, Pune. I enjoy building full-stack applications — from collaborative real-time tools to distributed knowledge management platforms. I care about writing clean, scalable code and diving deep into the systems I build.
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-secondary/20 border border-border/50 rounded-2xl p-6">
-          <Code2 className="w-6 h-6 text-primary mb-4" />
-          <h3 className="text-lg font-bold mb-2">Development Focus</h3>
-          <p className="text-muted-foreground font-mono text-sm leading-relaxed">
+      {/* Callout: Development Focus */}
+      <div className="notion-callout bg-notion-blue-bg mt-4 mb-3">
+        <span className="text-xl leading-none flex-shrink-0 mt-0.5">🔧</span>
+        <div>
+          <p className="font-semibold text-sm text-foreground mb-1">Development Focus</p>
+          <p className="notion-text-sm">
             Specializing in scalable web applications, real-time communication systems, and modern frontend architectures using Next.js and React ecosystem.
           </p>
         </div>
+      </div>
 
-        <div className="bg-secondary/20 border border-border/50 rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <GraduationCap className="w-6 h-6 text-primary mb-4" />
-            <h3 className="text-lg font-bold mb-2">Education</h3>
-            <p className="text-muted-foreground font-mono text-xs">B.Tech in Information Technology</p>
-            <p className="text-foreground mt-1 text-sm font-medium">PES Modern College of Engineering</p>
+      {/* Callout: Education */}
+      <div className="notion-callout bg-notion-yellow-bg mb-3">
+        <span className="text-xl leading-none flex-shrink-0 mt-0.5">🎓</span>
+        <div>
+          <p className="font-semibold text-sm text-foreground mb-1">Education</p>
+          <p className="notion-text-sm">B.Tech in Information Technology</p>
+          <p className="text-sm text-foreground font-medium">PES Modern College of Engineering</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
+            <span className="notion-text-sm flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5" />
+              Nov 2022 — Jun 2026
+            </span>
+            <span className="notion-text-sm flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5" />
+              Pune, Maharashtra
+            </span>
           </div>
-          <div className="mt-6 space-y-2">
-            <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs">
-              <Calendar className="w-4 h-4" />
-              <span>Nov 2022 — Jun 2026</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs">
-              <MapPin className="w-4 h-4" />
-              <span>Pune, Maharashtra</span>
-            </div>
-          </div>
+        </div>
+      </div>
+
+      {/* Callout: Achievements */}
+      <div className="notion-callout bg-notion-green-bg mb-3">
+        <span className="text-xl leading-none flex-shrink-0 mt-0.5">🏆</span>
+        <div>
+          <p className="font-semibold text-sm text-foreground mb-1">Achievements</p>
+          <ul className="space-y-1">
+            <li className="notion-text-sm">🧩 <strong>250+</strong> LeetCode & GFG problems solved</li>
+            <li className="notion-text-sm">🥇 <strong>1st Place</strong> — CodeCraft Hackathon (internal college contest)</li>
+            <li className="notion-text-sm">🏅 <strong>4th Place</strong> — TechnoFEA Hackathon (among 800 teams, VIIT Pune)</li>
+          </ul>
         </div>
       </div>
     </div>

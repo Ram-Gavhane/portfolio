@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const lora = Lora({
+const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -35,9 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} ${lora.variable} bg-background font-sans text-foreground antialiased selection:bg-foreground selection:text-background`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${sourceSerif.variable} bg-background font-sans text-foreground antialiased`}
+        style={{
+          fontFamily: 'ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"',
+        }}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

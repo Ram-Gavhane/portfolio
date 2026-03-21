@@ -1,9 +1,9 @@
-import BentoGrid from "@/components/bento-grid";
+import NotionPage from "@/components/notion-page";
 
 export default function Home() {
   return (
     <main>  
-      <BentoGrid />
+      <NotionPage />
     </main>
   );
 }
