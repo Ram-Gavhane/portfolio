@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,8 +8,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const lora = Lora({
+  variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
 });
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} bg-background font-sans text-foreground antialiased selection:bg-foreground selection:text-background`}>
+      <body className={`${inter.variable} ${lora.variable} bg-background font-sans text-foreground antialiased selection:bg-foreground selection:text-background`}>
         {children}
       </body>
     </html>
