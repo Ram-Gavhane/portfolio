@@ -48,7 +48,6 @@ export default function About() {
           <p className="font-semibold text-sm text-foreground mb-1">Achievements</p>
           <ul className="space-y-1">
             <li className="notion-text-sm">🧩 <strong>250+</strong> LeetCode & GFG problems solved</li>
-            <li className="notion-text-sm">🥇 <strong>1st Place</strong> — CodeCraft Hackathon (internal college contest)</li>
             <li className="notion-text-sm">🏅 <strong>4th Place</strong> — TechnoFEA Hackathon (among 800 teams, VIIT Pune)</li>
           </ul>
         </div>

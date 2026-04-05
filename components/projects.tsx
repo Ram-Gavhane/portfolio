@@ -13,11 +13,11 @@ const projects = [
       "Implemented a smart eligibility filtering engine that automatically screens students based on criteria like CGPA, branch, and backlogs, significantly reducing manual shortlisting effort for placement coordinators.",
       "Implemented domain-restricted authentication using Auth0, allowing only users with a @moderncoe.edu.in institutional email to sign up and log in, ensuring secure access limited to authorized college members.",
     ],
-    link: "https://github.com/Ram-Gavhane/CSPS",
+    link: "https://tnp-frontend-gold.vercel.app/",
     status: "Live",
   },
   {
-    title: "Better-Uptime",
+    title: "Observiq",
     date: "Feb 2026",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Turborepo", "Redis Streams"],
     description: [
@@ -25,7 +25,7 @@ const projects = [
       "Implemented Redis Streams with consumer groups to distribute health-check jobs across multiple workers, enabling scalable and parallel monitoring of thousands of websites.",
       "Developed the backend using Bun with PostgreSQL (Prisma ORM) for high-performance API handling, website registration, and persistent storage of uptime monitoring results.",
     ],
-    link: "https://github.com/Ram-Gavhane/better-uptime",
+    link: "https://observiq.vercel.app/",
     status: "In Progress",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
       "Implemented WebSocket-based synchronization for seamless multi-user interaction.",
       "Learnt SSR, SSG in Next.js and to manage entire codebase monorepo.",
     ],
-    link: "https://github.com/Ram-Gavhane",
+    link: "https://github.com/Ram-Gavhane/Draw-app",
     status: "Completed",
   },
   {
@@ -49,7 +49,7 @@ const projects = [
       "Integrated YouTube videos, Twitter tweets, and written documents for a unified knowledge hub.",
       "Improved code maintainability and readability using TypeScript interfaces and types.",
     ],
-    link: "https://github.com/Ram-Gavhane",
+    link: "https://github.com/Ram-Gavhane/Brainly",
     status: "Completed",
   },
   {

@@ -8,10 +8,6 @@ const achievements = [
   {
     highlight: "4th Place",
     description: "TechnoFEA Hackathon — among 800 teams, VIIT Pune",
-  },
-  {
-    highlight: "1st Place",
-    description: "CodeCraft Hackathon — internal college contest",
   }
 ];
 

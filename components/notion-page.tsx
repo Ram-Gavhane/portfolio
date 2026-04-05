@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useTheme } from "next-themes";
 import {
-  ChevronLeft,
   Search,
   Settings,
   ChevronsLeft,
@@ -12,8 +10,6 @@ import {
   Star,
   MoreHorizontal,
   MessageSquare,
-  Sun,
-  Moon,
 } from "lucide-react";
 import About from "./about";
 import Projects from "./projects";
@@ -49,17 +45,7 @@ const sections: {
 export default function NotionPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -142,17 +128,7 @@ export default function NotionPage() {
 
         {/* Sidebar Footer */}
         <div className="px-2 py-2 border-t border-border space-y-0.5">
-          <button
-            onClick={toggleTheme}
-            className="flex items-center gap-2 w-full px-2 py-1 text-sm text-muted-foreground rounded hover:bg-sidebar-hover transition-colors"
-          >
-            {mounted && theme === "dark" ? (
-              <Sun className="w-4 h-4" />
-            ) : (
-              <Moon className="w-4 h-4" />
-            )}
-            <span>{mounted && theme === "dark" ? "Light mode" : "Dark mode"}</span>
-          </button>
+
           <button className="flex items-center gap-2 w-full px-2 py-1 text-sm text-muted-foreground rounded hover:bg-sidebar-hover transition-colors">
             <Settings className="w-4 h-4" />
             <span>Settings & members</span>
@@ -187,16 +163,7 @@ export default function NotionPage() {
               Ram&apos;s Workspace
             </span>
           </div>
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded hover:bg-secondary transition-colors text-muted-foreground"
-          >
-            {mounted && theme === "dark" ? (
-              <Sun className="w-4 h-4" />
-            ) : (
-              <Moon className="w-4 h-4" />
-            )}
-          </button>
+
         </div>
 
         {/* Mobile Navigation Dropdown */}
@@ -222,13 +189,11 @@ export default function NotionPage() {
         className="flex-1 overflow-y-auto overflow-x-hidden"
       >
         {/* Cover Image */}
-        <div className="w-full h-[28vh] min-h-[180px] max-h-[280px] relative overflow-hidden">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--cover-from) 0%, var(--cover-via1) 30%, var(--cover-via2) 50%, var(--cover-via3) 70%, var(--cover-to) 100%)",
-            }}
+        <div className="w-full h-[28vh] min-h-[180px] max-h-[280px] relative overflow-hidden bg-muted">
+          <img 
+            src="/bg-img.jpg" 
+            alt="Cover" 
+            className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Subtle grain texture */}
           <div
@@ -247,14 +212,14 @@ export default function NotionPage() {
 
         {/* Page Icon */}
         <div className="max-w-[900px] mx-auto px-12 md:px-24 relative">
-          <div className="relative -mt-10 mb-3">
-            <span
-              className="text-[78px] leading-[1.2] cursor-pointer hover:opacity-80 transition-opacity select-none block"
-              role="img"
-              aria-label="Page icon"
-            >
-              👨‍💻
-            </span>
+          <div className="relative -mt-16 mb-4">
+            <div className="w-[124px] h-[124px] rounded-[30px] overflow-hidden border-[4px] border-background shadow-xl bg-background group cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+              <img 
+                src="/profile.jpg" 
+                alt="Ram Gavhane" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           {/* Page Title */}

@@ -101,71 +101,6 @@
 
 @layer base {
   :root {
-    /* ── Notion Light Theme ── */
-    --background: #FFFFFF;
-    --foreground: rgb(55, 53, 47);
-
-    --card: #FFFFFF;
-    --card-foreground: rgb(55, 53, 47);
-
-    --popover: #FFFFFF;
-    --popover-foreground: rgb(55, 53, 47);
-
-    --primary: rgb(55, 53, 47);
-    --primary-foreground: #FFFFFF;
-
-    --secondary: rgb(247, 246, 243);
-    --secondary-foreground: rgb(55, 53, 47);
-
-    --muted: rgb(247, 246, 243);
-    --muted-foreground: rgba(55, 53, 47, 0.65);
-
-    --accent: rgb(247, 246, 243);
-    --accent-foreground: rgb(55, 53, 47);
-
-    --destructive: rgb(235, 87, 87);
-    --destructive-foreground: #FFFFFF;
-
-    --border: rgba(55, 53, 47, 0.09);
-    --input: rgba(55, 53, 47, 0.16);
-    --ring: rgb(35, 131, 226);
-
-    --radius: 0.25rem;
-
-    /* ── Notion Tag Colors ── */
-    --notion-blue: rgb(35, 131, 226);
-    --notion-brown: rgb(159, 107, 83);
-    --notion-orange: rgb(217, 115, 13);
-    --notion-yellow: rgb(203, 145, 47);
-    --notion-green: rgb(15, 123, 108);
-    --notion-purple: rgb(144, 101, 176);
-    --notion-pink: rgb(193, 76, 138);
-    --notion-red: rgb(212, 76, 71);
-    --notion-gray: rgb(155, 154, 151);
-
-    --notion-blue-bg: rgba(35, 131, 226, 0.12);
-    --notion-brown-bg: rgba(159, 107, 83, 0.12);
-    --notion-orange-bg: rgba(217, 115, 13, 0.12);
-    --notion-yellow-bg: rgba(203, 145, 47, 0.12);
-    --notion-green-bg: rgba(15, 123, 108, 0.12);
-    --notion-purple-bg: rgba(144, 101, 176, 0.12);
-    --notion-pink-bg: rgba(193, 76, 138, 0.12);
-    --notion-red-bg: rgba(212, 76, 71, 0.12);
-    --notion-gray-bg: rgba(155, 154, 151, 0.12);
-
-    /* ── Sidebar ── */
-    --sidebar: rgb(251, 251, 250);
-    --sidebar-hover: rgba(55, 53, 47, 0.04);
-
-    /* ── Cover gradient ── */
-    --cover-from: #E8DED3;
-    --cover-via1: #F5EDE6;
-    --cover-via2: #E3DBD1;
-    --cover-via3: #DDD5CA;
-    --cover-to: #F0E8E0;
-  }
-
-  .dark {
     --background: #191919;
     --foreground: rgba(255, 255, 255, 0.9);
 
@@ -193,6 +128,8 @@
     --border: rgba(255, 255, 255, 0.08);
     --input: rgba(255, 255, 255, 0.13);
     --ring: rgb(35, 131, 226);
+
+    --radius: 0.25rem;
 
     /* ── Notion Tag Colors (Dark) ── */
     --notion-blue: rgb(82, 156, 230);
