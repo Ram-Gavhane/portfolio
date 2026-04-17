@@ -12,7 +12,7 @@ export default function About() {
 
       {/* Callout: Development Focus */}
       <div className="notion-callout bg-notion-blue-bg mt-4 mb-3">
-        <span className="text-xl leading-none flex-shrink-0 mt-0.5">🔧</span>
+        <span className="text-xl leading-none flex-shrink-0 mt-0.5">💻</span>
         <div>
           <p className="font-semibold text-sm text-foreground mb-1">Development Focus</p>
           <p className="notion-text-sm">
@@ -47,8 +47,8 @@ export default function About() {
         <div>
           <p className="font-semibold text-sm text-foreground mb-1">Achievements</p>
           <ul className="space-y-1">
-            <li className="notion-text-sm">🧩 <strong>250+</strong> LeetCode & GFG problems solved</li>
-            <li className="notion-text-sm">🏅 <strong>4th Place</strong> — TechnoFEA Hackathon (among 800 teams, VIIT Pune)</li>
+            <li className="notion-text-sm">👨‍💻 <strong>250+</strong> LeetCode & GFG problems solved</li>
+            <li className="notion-text-sm">🏆 <strong>4th Place</strong> — TechnoFEA Hackathon (among 800 teams, VIIT Pune)</li>
           </ul>
         </div>
       </div>

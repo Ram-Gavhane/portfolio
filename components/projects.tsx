@@ -6,6 +6,7 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 const projects = [
   {
     title: "CSPS - Centralized Student Placement System",
+    emoji: "🌐",
     date: "Nov 2025",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Node.js"],
     description: [
@@ -18,6 +19,7 @@ const projects = [
   },
   {
     title: "Observiq",
+    emoji: "🌐",
     date: "Feb 2026",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Turborepo", "Redis Streams"],
     description: [
@@ -30,6 +32,7 @@ const projects = [
   },
   {
     title: "Kanvas",
+    emoji: "🐙",
     date: "May 2025",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Turborepo"],
     description: [
@@ -42,6 +45,7 @@ const projects = [
   },
   {
     title: "Brainly — A Second Brain",
+    emoji: "🐙",
     date: "March 2025",
     tech: ["React", "TypeScript", "MongoDB", "Node.js"],
     description: [
@@ -54,6 +58,7 @@ const projects = [
   },
   {
     title: "Course Selling App",
+    emoji: "🐙",
     date: "February 2025",
     tech: ["React", "JavaScript", "MongoDB", "Node.js"],
     description: [
@@ -231,7 +236,7 @@ export default function Projects() {
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-base">📄</span>
+                    <span className="text-base">{project.emoji}</span>
                     <h3 className="text-sm font-medium text-foreground truncate">
                       {project.title}
                     </h3>

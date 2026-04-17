@@ -2,16 +2,10 @@
 
 const links = [
   {
-    emoji: "📧",
+    emoji: "✉️",
     label: "Email",
     value: "work.ramgavhane@gmail.com",
     href: "mailto:work.ramgavhane@gmail.com",
-  },
-  {
-    emoji: "📱",
-    label: "Phone",
-    value: "962-321-2311",
-    href: "tel:+919623212311",
   },
   {
     emoji: "💼",

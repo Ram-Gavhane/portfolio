@@ -16,6 +16,7 @@ import Projects from "./projects";
 import Skills from "./skills";
 import Contact from "./contact";
 import LocationMention from "./location";
+import SearchModal from "./search-modal";
 
 interface NavItem {
   id: string;
@@ -24,9 +25,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: "about", emoji: "👤", label: "About" },
-  { id: "projects", emoji: "🗂️", label: "Projects" },
-  { id: "skills", emoji: "🛠️", label: "Skills" },
+  { id: "about", emoji: "🙋‍♂️", label: "About" },
+  { id: "projects", emoji: "🚀", label: "Projects" },
+  { id: "skills", emoji: "🔧", label: "Skills" },
   { id: "contact", emoji: "📬", label: "Contact" },
 ];
 
@@ -45,7 +46,20 @@ const sections: {
 export default function NotionPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -83,9 +97,17 @@ export default function NotionPage() {
 
         {/* Search */}
         <div className="px-2 mb-1">
-          <button className="flex items-center gap-2 w-full px-2 py-1 text-sm text-muted-foreground rounded hover:bg-sidebar-hover transition-colors">
-            <Search className="w-4 h-4" />
-            <span>Search</span>
+          <button 
+            onClick={() => setIsSearchOpen(true)}
+            className="flex items-center gap-2 w-full px-2 py-1 text-sm text-muted-foreground rounded hover:bg-sidebar-hover transition-colors group/search"
+          >
+            <div className="flex items-center gap-2 flex-1">
+              <Search className="w-4 h-4" />
+              <span>Search</span>
+            </div>
+            <div className="hidden group-hover/search:flex items-center gap-1 px-1.5 py-0.5 rounded border border-border bg-sidebar text-[10px] text-muted-foreground">
+              <span className="text-[8px]">⌘</span>K
+            </div>
           </button>
         </div>
 
@@ -311,6 +333,13 @@ export default function NotionPage() {
           </div>
         </div>
       </main>
+
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        items={navItems}
+        onSelect={scrollToSection}
+      />
     </div>
   );
 }

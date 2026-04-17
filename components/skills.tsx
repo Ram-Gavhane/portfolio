@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 const skillGroups = [
   {
     category: "Languages",
-    emoji: "💻",
+    emoji: "⌨️",
     items: [
       { name: "Python", color: "bg-notion-blue-bg text-notion-blue" },
       { name: "Java", color: "bg-notion-orange-bg text-notion-orange" },
@@ -16,7 +16,7 @@ const skillGroups = [
   },
   {
     category: "Full Stack",
-    emoji: "🌐",
+    emoji: "🏗️",
     items: [
       { name: "HTML5", color: "bg-notion-orange-bg text-notion-orange" },
       { name: "CSS", color: "bg-notion-blue-bg text-notion-blue" },
@@ -32,7 +32,7 @@ const skillGroups = [
   },
   {
     category: "Databases",
-    emoji: "🗄️",
+    emoji: "💽",
     items: [
       { name: "MySQL", color: "bg-notion-blue-bg text-notion-blue" },
       { name: "MongoDB", color: "bg-notion-green-bg text-notion-green" },
@@ -42,7 +42,7 @@ const skillGroups = [
   },
   {
     category: "DevOps & Tools",
-    emoji: "⚙️",
+    emoji: "🛠️",
     items: [
       { name: "Docker", color: "bg-notion-blue-bg text-notion-blue" },
       { name: "AWS", color: "bg-notion-orange-bg text-notion-orange" },
