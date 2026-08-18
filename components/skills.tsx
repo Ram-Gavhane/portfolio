@@ -77,7 +77,7 @@ export default function Skills() {
         const isOpen = openToggles.has(i);
 
         return (
-          <div key={group.category}>
+          <div key={group.category} id={`skill-group-${group.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
             {/* Toggle Header */}
             <div
               onClick={() => toggleGroup(i)}

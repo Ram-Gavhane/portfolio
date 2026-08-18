@@ -140,15 +140,16 @@ export default function Projects() {
             <div className="w-10 px-3 py-1.5"></div>
           </div>
 
-          {/* Rows */}
-          {projects.map((project, index) => (
-            <div key={project.title}>
-              <div
-                className="notion-database-row cursor-pointer"
-                onClick={() =>
-                  setExpandedRow(expandedRow === index ? null : index)
-                }
-              >
+          {projects.map((project, index) => {
+            const projectSlug = `project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+            return (
+              <div key={project.title} id={projectSlug}>
+                <div
+                  className="notion-database-row cursor-pointer"
+                  onClick={() =>
+                    setExpandedRow(expandedRow === index ? null : index)
+                  }
+                >
                 <div className="flex-[2] px-3 py-2 text-sm font-medium text-foreground truncate">
                   {project.title}
                 </div>
@@ -213,7 +214,8 @@ export default function Projects() {
                 </div>
               )}
             </div>
-          ))}
+          );
+        })}
 
           {/* New Row (decorative) */}
           <div className="notion-database-row text-muted-foreground/50 cursor-default">
@@ -225,14 +227,17 @@ export default function Projects() {
       ) : (
         /* ── List View ── */
         <div className="space-y-2">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className="notion-block-hover p-3 cursor-pointer"
-              onClick={() =>
-                setExpandedRow(expandedRow === index ? null : index)
-              }
-            >
+          {projects.map((project, index) => {
+            const projectSlug = `project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+            return (
+              <div
+                key={project.title}
+                id={projectSlug}
+                className="notion-block-hover p-3 cursor-pointer"
+                onClick={() =>
+                  setExpandedRow(expandedRow === index ? null : index)
+                }
+              >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
@@ -282,7 +287,7 @@ export default function Projects() {
                 </div>
               )}
             </div>
-          ))}
+          )})}
         </div>
       )}
     </div>

@@ -16,7 +16,7 @@ import Projects from "./projects";
 import Skills from "./skills";
 import Contact from "./contact";
 import LocationMention from "./location";
-import SearchModal from "./search-modal";
+import SearchModal, { SearchItem } from "./search-modal";
 
 interface NavItem {
   id: string;
@@ -29,6 +29,67 @@ const navItems: NavItem[] = [
   { id: "projects", emoji: "🚀", label: "Projects" },
   { id: "skills", emoji: "🔧", label: "Skills" },
   { id: "contact", emoji: "📬", label: "Contact" },
+];
+
+const searchItems: SearchItem[] = [
+  // ── Sections ──
+  { id: "about", emoji: "🙋‍♂️", label: "About", category: "Section", description: "Who I am, education, focus, and achievements" },
+  { id: "projects", emoji: "🚀", label: "Projects", category: "Section", description: "CSPS, Observiq, Kanvas, Brainly, Course Selling" },
+  { id: "skills", emoji: "🔧", label: "Skills", category: "Section", description: "Languages, Full Stack, Databases, DevOps & Tools" },
+  { id: "contact", emoji: "📬", label: "Contact", category: "Section", description: "Get in touch via Email, LinkedIn, GitHub, Resume" },
+
+  // ── About Details ──
+  { id: "about-focus", emoji: "💻", label: "Development Focus", category: "About", description: "Next.js, React ecosystem, scalable web apps & real-time communication" },
+  { id: "about-education", emoji: "🎓", label: "Education: B.Tech in IT", category: "About", description: "PES Modern College of Engineering, Pune (Nov 2022 — Jun 2026)" },
+  { id: "about-achievements", emoji: "🏆", label: "Achievements", category: "About", description: "LeetCode & GFG 250+ solved, 4th Place TechnoFEA Hackathon" },
+
+  // ── Projects ──
+  { id: "project-csps-centralized-student-placement-system", emoji: "🌐", label: "CSPS - Centralized Student Placement System", category: "Project", description: "Next.js, TypeScript, PostgreSQL, Node.js, Auth0 eligibility filtering portal" },
+  { id: "project-observiq", emoji: "🌐", label: "Observiq", category: "Project", description: "Next.js, TypeScript, PostgreSQL, Bun, Redis Streams distributed uptime monitor" },
+  { id: "project-kanvas", emoji: "🐙", label: "Kanvas", category: "Project", description: "Next.js, TypeScript, PostgreSQL, WebSockets collaborative real-time drawing platform" },
+  { id: "project-brainly-a-second-brain", emoji: "🐙", label: "Brainly — A Second Brain", category: "Project", description: "React, TypeScript, MongoDB, Node.js knowledge organizer for YT, tweets, docs" },
+  { id: "project-course-selling-app", emoji: "🐙", label: "Course Selling App", category: "Project", description: "React, JavaScript, MongoDB, Node.js educational platform for purchasing courses" },
+
+  // ── Skill Groups ──
+  { id: "skill-group-languages", emoji: "⌨️", label: "Languages", category: "Skill Group", description: "Python, Java, C++, Rust" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "Full Stack", category: "Skill Group", description: "React, Next.js, HTML5, CSS, JS, TS, Node.js, Express, WebSockets, REST APIs" },
+  { id: "skill-group-databases", emoji: "💽", label: "Databases", category: "Skill Group", description: "MySQL, MongoDB, PostgreSQL, Redis" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "DevOps & Tools", category: "Skill Group", description: "Docker, AWS, Kubernetes, Prometheus, Grafana, Git, Turborepo, Prisma" },
+
+  // ── Individual Skills ──
+  // Languages
+  { id: "skill-group-languages", emoji: "⌨️", label: "Python", category: "Skill", description: "Programming Language" },
+  { id: "skill-group-languages", emoji: "⌨️", label: "Java", category: "Skill", description: "Programming Language" },
+  { id: "skill-group-languages", emoji: "⌨️", label: "C++", category: "Skill", description: "Programming Language" },
+  { id: "skill-group-languages", emoji: "⌨️", label: "Rust", category: "Skill", description: "Programming Language" },
+  // Full Stack
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "HTML5 & CSS", category: "Skill", description: "Web structures, styles, layouts" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "JavaScript", category: "Skill", description: "Dynamic scripting and frontend behavior" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "TypeScript", category: "Skill", description: "Typed JavaScript dialect for robust apps" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "React", category: "Skill", description: "Frontend library for component architecture" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "Next.js", category: "Skill", description: "Full-stack framework with SSR, SSG, Turbopack" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "Node.js & Express.js", category: "Skill", description: "Backend server-side APIs runtime and framework" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "Websockets", category: "Skill", description: "Real-time bi-directional messaging communication" },
+  { id: "skill-group-full-stack", emoji: "🏗️", label: "REST APIs", category: "Skill", description: "Designing clean endpoints and request/response structures" },
+  // Databases
+  { id: "skill-group-databases", emoji: "💽", label: "MySQL", category: "Skill", description: "Relational database system" },
+  { id: "skill-group-databases", emoji: "💽", label: "MongoDB", category: "Skill", description: "Document-oriented NoSQL database" },
+  { id: "skill-group-databases", emoji: "💽", label: "PostgreSQL", category: "Skill", description: "Advanced relational database system" },
+  { id: "skill-group-databases", emoji: "💽", label: "Redis", category: "Skill", description: "In-memory caching and message broker" },
+  // DevOps & Tools
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Docker", category: "Skill", description: "Containerization and software packaging" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "AWS", category: "Skill", description: "Cloud infrastructure services" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Kubernetes", category: "Skill", description: "Container orchestration platform" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Prometheus & Grafana", category: "Skill", description: "Monitoring, alerts, and system health dashboards" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Git", category: "Skill", description: "Distributed version control system" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Turborepo", category: "Skill", description: "Monorepo build system toolchain" },
+  { id: "skill-group-devops-tools", emoji: "🛠️", label: "Prisma", category: "Skill", description: "Node.js and TypeScript ORM for databases" },
+
+  // ── Contact Details ──
+  { id: "contact-email", emoji: "✉️", label: "Email", category: "Contact", description: "work.ramgavhane@gmail.com" },
+  { id: "contact-linkedin", emoji: "💼", label: "LinkedIn", category: "Contact", description: "linkedin.com/in/ram-gavhane" },
+  { id: "contact-github", emoji: "🐙", label: "GitHub", category: "Contact", description: "github.com/Ram-Gavhane" },
+  { id: "contact-resume", emoji: "📄", label: "Resume (CV)", category: "Contact", description: "View Google Drive Resume" },
 ];
 
 const sections: {
@@ -369,7 +430,7 @@ export default function NotionPage() {
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        items={navItems}
+        items={searchItems}
         onSelect={scrollToSection}
       />
     </div>

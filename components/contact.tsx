@@ -35,23 +35,27 @@ export default function Contact() {
       </p>
 
       <div className="space-y-2">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="notion-callout bg-secondary hover:bg-[rgba(55,53,47,0.06)] transition-colors group"
-          >
-            <span className="text-xl leading-none flex-shrink-0">{link.emoji}</span>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 min-w-0">
-              <span className="text-sm font-medium text-foreground">{link.label}</span>
-              <span className="text-sm text-notion-blue group-hover:underline underline-offset-2 truncate">
-                {link.value}
-              </span>
-            </div>
-          </a>
-        ))}
+        {links.map((link) => {
+          const contactSlug = `contact-${link.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+          return (
+            <a
+              key={link.href}
+              id={contactSlug}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="notion-callout bg-secondary hover:bg-[rgba(55,53,47,0.06)] transition-colors group"
+            >
+              <span className="text-xl leading-none flex-shrink-0">{link.emoji}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 min-w-0">
+                <span className="text-sm font-medium text-foreground">{link.label}</span>
+                <span className="text-sm text-notion-blue group-hover:underline underline-offset-2 truncate">
+                  {link.value}
+                </span>
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       <hr className="notion-divider mt-6 mb-3" />

@@ -4,10 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Command, X } from "lucide-react";
 
-interface SearchItem {
+export interface SearchItem {
   id: string;
   emoji: string;
   label: string;
+  category?: string;
+  description?: string;
 }
 
 interface SearchModalProps {
@@ -27,9 +29,14 @@ export default function SearchModal({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const filteredItems = items.filter((item) =>
-    item.label.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredItems = items.filter((item) => {
+    const q = query.toLowerCase();
+    return (
+      item.label.toLowerCase().includes(q) ||
+      (item.description && item.description.toLowerCase().includes(q)) ||
+      (item.category && item.category.toLowerCase().includes(q))
+    );
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -115,27 +122,34 @@ export default function SearchModal({
                     </div>
                     {filteredItems.map((item, index) => (
                       <button
-                        key={item.id}
+                        key={`${item.id}-${index}`}
                         onMouseEnter={() => setSelectedIndex(index)}
                         onClick={() => {
                           onSelect(item.id);
                           onClose();
                         }}
-                        className={`flex items-center justify-between w-full px-3 py-2.5 rounded-lg transition-colors text-left group ${
+                        className={`flex items-start justify-between w-full px-3 py-2 rounded-lg transition-colors text-left group ${
                           selectedIndex === index
                             ? "bg-sidebar-hover text-foreground"
                             : "text-muted-foreground hover:bg-sidebar-hover/50"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <span className={`${selectedIndex === index ? "text-lg" : "text-base"} transition-all`}>
-                            {item.emoji}
+                        <div className="flex gap-3 min-w-0 flex-1">
+                          <span className="text-lg flex-shrink-0 mt-0.5">{item.emoji}</span>
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-medium text-sm text-foreground truncate">{item.label}</span>
+                            {item.description && (
+                              <span className="text-xs text-muted-foreground truncate max-w-[420px] mt-0.5">
+                                {item.description}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        {item.category && (
+                          <span className="text-[10px] notion-tag bg-secondary/80 text-muted-foreground shrink-0 self-center py-0.5 px-1.5 ml-2 font-mono uppercase tracking-wider">
+                            {item.category}
                           </span>
-                          <span className="font-medium">{item.label}</span>
-                        </div>
-                        <div className={`transition-opacity duration-200 ${selectedIndex === index ? "opacity-100" : "opacity-0"}`}>
-                           <Command className="w-3.5 h-3.5" />
-                        </div>
+                        )}
                       </button>
                     ))}
                   </div>

@@ -20,7 +20,7 @@ export default function About() {
       </p>
 
       {/* Callout: Development Focus */}
-      <div className="notion-callout bg-notion-blue-bg mt-4 mb-3">
+      <div id="about-focus" className="notion-callout bg-notion-blue-bg mt-4 mb-3">
         <span className="text-xl leading-none flex-shrink-0 mt-0.5">💻</span>
         <div>
           <p className="font-semibold text-sm text-foreground mb-1">Development Focus</p>
@@ -31,7 +31,7 @@ export default function About() {
       </div>
 
       {/* Callout: Education */}
-      <div className="notion-callout bg-notion-yellow-bg mb-3">
+      <div id="about-education" className="notion-callout bg-notion-yellow-bg mb-3">
         <span className="text-xl leading-none flex-shrink-0 mt-0.5">🎓</span>
         <div>
           <p className="font-semibold text-sm text-foreground mb-1">Education</p>
@@ -51,7 +51,7 @@ export default function About() {
       </div>
 
       {/* Callout: Achievements */}
-      <div className="notion-callout bg-notion-green-bg mb-3">
+      <div id="about-achievements" className="notion-callout bg-notion-green-bg mb-3">
         <span className="text-xl leading-none flex-shrink-0 mt-0.5">🏆</span>
         <div>
           <p className="font-semibold text-sm text-foreground mb-1">Achievements</p>
