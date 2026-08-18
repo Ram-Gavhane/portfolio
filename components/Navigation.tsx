@@ -51,7 +51,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="https://github.com/ramgavhane"
+            href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm font-mono border border-border text-foreground rounded hover:bg-secondary transition-colors"
@@ -96,7 +96,7 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="https://github.com/ramgavhane"
+                href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

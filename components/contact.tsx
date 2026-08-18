@@ -19,6 +19,12 @@ const links = [
     value: "github.com/Ram-Gavhane",
     href: "https://github.com/Ram-Gavhane",
   },
+  {
+    emoji: "📄",
+    label: "Resume",
+    value: "View Resume (Google Drive)",
+    href: "https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing",
+  },
 ];
 
 export default function Contact() {

@@ -7,7 +7,16 @@ export default function About() {
     <div className="w-full">
       {/* Text block */}
       <p className="notion-text mb-1">
-        I'm a final-year Information Technology student at P.E.S's Modern College of Engineering, Pune. I enjoy building full-stack applications — from collaborative real-time tools to distributed knowledge management platforms. I care about writing clean, scalable code and diving deep into the systems I build.
+        I'm a final-year Information Technology student at P.E.S's Modern College of Engineering, Pune. I enjoy building full-stack applications — from collaborative real-time tools to distributed knowledge management platforms. I care about writing clean, scalable code and diving deep into the systems I build. You can also view my{" "}
+        <a
+          href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="notion-link text-notion-blue"
+        >
+          Resume
+        </a>
+        .
       </p>
 
       {/* Callout: Development Focus */}

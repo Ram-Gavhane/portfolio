@@ -129,6 +129,15 @@ export default function NotionPage() {
                 <span>{item.label}</span>
               </button>
             ))}
+            <a
+              href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 w-full px-2 py-1 text-sm text-foreground rounded hover:bg-sidebar-hover transition-colors text-left"
+            >
+              <span className="text-base w-5 text-center">📄</span>
+              <span>Resume</span>
+            </a>
           </div>
 
           {/* Favorites section */}
@@ -201,6 +210,16 @@ export default function NotionPage() {
                 <span>{item.label}</span>
               </button>
             ))}
+            <a
+              href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 w-full px-2 py-1.5 text-sm text-foreground rounded hover:bg-secondary transition-colors text-left"
+            >
+              <span className="text-base">📄</span>
+              <span>Resume</span>
+            </a>
           </div>
         )}
       </div>
@@ -296,6 +315,19 @@ export default function NotionPage() {
                 <span className="notion-tag bg-notion-green-bg text-notion-green text-sm">
                   Available for work
                 </span>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 py-1 notion-block-hover px-1">
+              <span className="notion-property-label">Resume</span>
+              <span className="notion-property-value">
+                <a
+                  href="https://drive.google.com/file/d/1NmK-1uVnZQvjsEsa0EK7SwOA73YpuEAp/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="notion-link text-notion-blue"
+                >
+                  Ram_Gavhane_Resume.pdf
+                </a>
               </span>
             </div>
             <div className="flex items-center gap-3 py-1 notion-block-hover px-1">
